@@ -12,7 +12,7 @@ namespace DmatAccountApi.Controllers
         {
             return Ok(new
             {
-                RequestTime = System.DateTime.Now,
+                RequestTime = DateTime.Now,
                 Status = "Success",
                 Message = "DMAT Account created successfully."
             });
