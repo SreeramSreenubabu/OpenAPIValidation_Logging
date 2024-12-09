@@ -1,0 +1,6 @@
+@DmatAccountApi_HostAddress = http://localhost:5110
+
+GET {{DmatAccountApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
