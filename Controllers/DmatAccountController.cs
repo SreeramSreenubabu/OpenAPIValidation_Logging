@@ -14,7 +14,7 @@ namespace DmatAccountApi.Controllers
             {
                 RequestTime = DateTime.Now,
                 Status = "Success",
-                Message = "DMAT Account created successfully."
+                Message = "Validation successfull."
             });
         }
     }

@@ -1,16 +1,31 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
 namespace DmatAccountApi.Models
 {
     public class DmatAccountRequest
     {
-        public string FullName { get; set; }          // Mandatory
-        public string Email { get; set; }             // Mandatory
-        public string MobileNumber { get; set; }      // Mandatory
-        public string PanNumber { get; set; }         // Mandatory
-        public string AadharNumber { get; set; }      // Mandatory
-        public string DateOfBirth { get; set; }       // Mandatory (ISO 8601 format)
-        public string Address { get; set; }           // Mandatory
-        public string Occupation { get; set; }        // Optional
-        public decimal? AnnualIncome { get; set; }    // Optional
-        public string NomineeName { get; set; }       // Optional
+        [Required(ErrorMessage = "SecCode is required.")]
+        // [StringLength(4, ErrorMessage = "SecCode must be exactly 4 characters long.")]
+        //[MaxLength(4, ErrorMessage = "The Name field cannot be longer than 100 characters.")]
+        public string SecCode { get; set; }
+
+
+        [Required(ErrorMessage = "RowCount is required.")]
+        //[Range(1, 99999, ErrorMessage = "RowCount must be between 1 and 99999.")]
+        //[Range(1, int.MaxValue, ErrorMessage = "RowCount must be between 1 and the maximum value of an integer.")]
+        public int RowCount { get; set; }
+
+
+        [DefaultValue(true)]
+        public bool BLivePriceData { get; set; }
+
+        [Required(ErrorMessage = "PageIndex is required.")]
+        [DefaultValue(0)]
+        //  [Range(1, int.MaxValue, ErrorMessage = "PageIndex must be greater than 0.")]
+        public int PageIndex { get; set; }
+
+        public DateTime? DtDate { get; set; }
     }
 }
